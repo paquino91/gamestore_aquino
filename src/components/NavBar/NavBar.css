@@ -1,0 +1,109 @@
+.iconLogin {
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+  }
+
+  .buttonNav
+  {
+    color: #e9ec91;
+    font-size: 15px;
+    padding: 10px 40px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    cursor: pointer;
+  }
+
+  .buttonNav:hover
+  {
+    animation: buttonNavAnimation 1s forwards;
+  }
+
+  @keyframes buttonNavAnimation {
+
+    from { 
+    }
+    to {
+      letter-spacing: 4px;
+      opacity: 0.7;
+    }
+  }
+
+  .navDivisor
+  {
+    opacity: 0.5;
+    width: 2px;
+    background-image: linear-gradient(to right top, #210909, #250a09, #290a09, #7b2b28, #8a5252);
+  }
+
+  .navOptionCenter
+  {
+    margin: auto;
+  }
+
+  .titleSite
+  {
+    font-size: 20px;
+  }
+
+  .dropdown-menu
+  {
+    background-image: linear-gradient(to right top, #210909, #210909, #210909, #210909, #210909);
+    z-index: 0 !important;
+  }
+  .dropdown-menu .dropdown-item
+  {
+    color: rgb(211, 201, 201);
+  }
+  
+  @media (max-width: 768px)
+  {
+    .dropdown-menu
+    {
+      background-image: unset;
+      background-color: transparent;
+      text-align: center;
+      border-color: linear-gradient(to right top, #644848, #210909, #210909, #2d1e1e, #210909);
+      border-width: 10px;
+    }
+
+    .titleSite
+    {
+      display: none;
+    }
+
+  }
+
+
+
+
+  .dropdown-item:hover
+  {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    color: rgb(211, 201, 201);
+    animation: optionNavAnimation 1s forwards;
+  }
+
+  @keyframes optionNavAnimation {
+
+    from { 
+    }
+    to {
+      opacity: 0.7;
+      background-color: #290a0a;
+      color: rgb(174, 174, 74);
+      border-radius: 20px;
+      
+    }
+  }
