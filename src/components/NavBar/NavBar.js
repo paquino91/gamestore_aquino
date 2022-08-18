@@ -8,6 +8,8 @@ import ImageSkins from "../../assets/img/skin.png";
 
 import './NavBar.css';
 
+import { CartWidget } from '../CartWidget/CartWidget';
+
 
 
 
@@ -84,7 +86,7 @@ const NavBar = () => {
     const PerfilUsuario = () => {
     return(          
 
-<div className='ml-3'>
+<div className='ml-1'>
 <input type="button" className='buttonNav' value="Ingresar" style={styleButton}   />
 </div>
         
@@ -106,15 +108,12 @@ const NavBar = () => {
         <HomeTituloSitio titulo="STORE GAME"/>
 
     {opciones.map((page, index) => ( page.lista == null ? <NavOpcion desc={page.desc} img={page.img}/> : <NavOpcionDropDown page={page} index={index}/> ))}
-    
-
-    
     </ul>
-    
-    
-
-        <PerfilUsuario/>
-    
+        <div className='navbar-nav'>
+            <li className='nav-item'><CartWidget cantidad="8" /></li>
+            <li className='nav-item'> <PerfilUsuario/></li>
+           
+        </div>
     </div>
     
     </nav>

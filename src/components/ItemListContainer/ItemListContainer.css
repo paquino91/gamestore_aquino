@@ -1,0 +1,20 @@
+.itemListContainer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: calc(10px + 2vmin);
+}
+
+.itemListContainer p
+{
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+}
+

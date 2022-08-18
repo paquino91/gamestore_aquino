@@ -1,0 +1,33 @@
+.cartContainer
+{
+    position: relative;
+}
+
+.boderCart{
+    padding: 5px;
+    
+}
+
+.cart
+{
+    height: 45px;
+    width: 45px;
+    color: white;
+}
+
+.valueCart
+{
+    position:absolute;
+    background-color: red;
+    border-radius: 15px;;
+    right: 1px;
+    top: 1px;
+    height: 45%;
+    width: 45%;
+}
+
+.valueCart p
+{
+    color: rgb(255, 254, 254);
+    font-size: 12px;
+}
