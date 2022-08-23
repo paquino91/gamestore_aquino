@@ -27,7 +27,7 @@ const opciones = [
     ];
 const configuracion = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const NavBar = () => {
+const NavBar = ({children}) => {
 
     const Logo = () => {
         return(
@@ -110,7 +110,7 @@ const NavBar = () => {
     {opciones.map((page, index) => ( page.lista == null ? <NavOpcion desc={page.desc} img={page.img}/> : <NavOpcionDropDown page={page} index={index}/> ))}
     </ul>
         <div className='navbar-nav'>
-            <li className='nav-item'><CartWidget cantidad="8" /></li>
+            <li className='nav-item'>{children}</li>
             <li className='nav-item'> <PerfilUsuario/></li>
            
         </div>
