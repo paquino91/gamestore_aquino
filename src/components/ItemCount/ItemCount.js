@@ -1,6 +1,6 @@
 import { useState } from "react"
 import './ItemCount.css';
-import ObjEspada from '../../assets/img/sword_item1.png'
+//import ObjEspada from '../../assets/img/sword_item1.png'
 
 import background from "../../assets/img/fondo_objetos.jpg";
 
@@ -52,7 +52,7 @@ export const ItemCount = ({stock, initial, onAdd}) =>
                           </div>
                </figcaption>
 
-               <a href="#" className="img-wrap" data-abc="true"><img src={ObjEspada}/></a>
+               <a href="#" className="img-wrap" data-abc="true"><img src=""/></a>
 
                <div className="col-md-12">
    

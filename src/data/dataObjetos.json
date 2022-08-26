@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Espada de Acero",
+        "description": "Daño: 2/5",
+        "price": 150.00,
+        "pictureUrl": "sword_item1.png"
+    },
+    {
+        "id": 2,
+        "title": "Espada Sagrada",
+        "description": "Daño: 4/6",
+        "price": 250.00,
+        "pictureUrl": "sword_item2.png"
+    },
+    {
+        "id": 3,
+        "title": "Espada Legendaria",
+        "description": "Daño: 5/8",
+        "price": 325.00,
+        "pictureUrl": "sword_item3.png"
+    }
+]
