@@ -1,22 +1,22 @@
 [
     {
         "id": 1,
-        "title": "Espada de Acero",
-        "description": "Daño: 2/5",
+        "title": "Espada de Plata",
+        "description": "La espada de acero es un arma utilizada por los guerreros, paladines y clerigos. No es un arma letal, pero es lo suficientemente fuerte como para poder establecer grandes duelos. Esta construido con 200 lingotes de hierro y 500 lingotes de plata.",
         "price": 150.00,
         "pictureUrl": "sword_item1.png"
     },
     {
         "id": 2,
         "title": "Espada Sagrada",
-        "description": "Daño: 4/6",
+        "description": "",
         "price": 250.00,
         "pictureUrl": "sword_item2.png"
     },
     {
         "id": 3,
         "title": "Espada Legendaria",
-        "description": "Daño: 5/8",
+        "description": "",
         "price": 325.00,
         "pictureUrl": "sword_item3.png"
     }

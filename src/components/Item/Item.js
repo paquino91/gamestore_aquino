@@ -15,7 +15,6 @@ export const Item = ({item}) =>
     return (
             <div className="col-md-4">
                 <figure className="card card-product-grid card-lg font-objeto" style={styleCard}>
-                    
                     <figcaption className="info-wrap">
                                 <div className="row">
                                     <div className="col-md-12">
@@ -26,9 +25,6 @@ export const Item = ({item}) =>
 
                     <a href="#" className="img-wrap" data-abc="true"><img src={pathImg + item.pictureUrl}/></a>
                     <div className="descripcionPrecio">
-                        <div className="col-md-12">
-                            <p className="font-objeto-descripcion" data-abc="true">{item.description}</p>
-                        </div>
 
                         <div className="col-md-12">
                             <div className="contenedorPrecio">

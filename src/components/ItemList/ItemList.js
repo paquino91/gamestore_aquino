@@ -12,7 +12,7 @@ export const ItemList = ({items}) =>
             setTimeout(() =>
             {
                 resolve(items);
-            }, 2000);
+            }, 3000);
         })
     }
     
