@@ -7,7 +7,7 @@ export const ItemListContainer = ({onAdd}) =>
 {
     return(
             <div className='itemListContainer'>
-                <ItemList items={dataObjetos}/>
+                <ItemList items={dataObjetos} />
             </div>
     )
 }

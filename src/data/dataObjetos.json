@@ -4,20 +4,47 @@
         "title": "Espada de Plata",
         "description": "La espada de acero es un arma utilizada por los guerreros, paladines y clerigos. No es un arma letal, pero es lo suficientemente fuerte como para poder establecer grandes duelos. Esta construido con 200 lingotes de hierro y 500 lingotes de plata.",
         "price": 150.00,
-        "pictureUrl": "sword_item1.png"
+        "pictureUrl": "sword_item1.png",
+        "idTipoObjeto": 1
     },
     {
         "id": 2,
         "title": "Espada Sagrada",
-        "description": "",
+        "description": "La espada sagrada es un arma utilizada solo por guerreros y paladines. Es un arma sumamente letal capaz de cortar hasta los objetos mas rigidos.",
         "price": 250.00,
-        "pictureUrl": "sword_item2.png"
+        "pictureUrl": "sword_item2.png",
+        "idTipoObjeto": 1
     },
     {
         "id": 3,
         "title": "Espada Legendaria",
-        "description": "",
+        "description": "La espada legendaria es un arma utilizada solo por guerreros y paladines. Es un arma letal. Se considera un arma mistica ya que no hay muchas de ellas.",
         "price": 325.00,
-        "pictureUrl": "sword_item3.png"
+        "pictureUrl": "sword_item3.png",
+        "idTipoObjeto": 1
+    },
+    {
+        "id": 4,
+        "title": "Armadura de Dragon",
+        "description": "La Armadura dragón es muy resistente a los ataques cuerpo a cuerpo.",
+        "price": 325.00,
+        "pictureUrl": "armor.png",
+        "idTipoObjeto": 2
+    },
+    {
+        "id": 5,
+        "title": "Descarga Electrica",
+        "description": "Descarga electrica es un hechizo muy poderoso utilizado por Magos, Clerigos y Paladines.",
+        "price": 325.00,
+        "pictureUrl": "conjuro.png",
+        "idTipoObjeto": 3
+    },
+    {
+        "id": 6,
+        "title": "Apocalipsis",
+        "description": "Apocalipsis es un hechizo muy poderoso utilizado por Magos y Clerigo. Utiliza una gran cantidad de mana, pero es un conjuro muy poderoso que puede herir de muerte a cualquier tipo de enemigo.",
+        "price": 825.00,
+        "pictureUrl": "conjuro.png",
+        "idTipoObjeto": 3
     }
 ]

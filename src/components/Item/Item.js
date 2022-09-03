@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState } from "react"
 import './Item.css';
 
@@ -8,6 +9,8 @@ const styleCard = {backgroundImage: `url(${background})` };
 const styleButton={backgroundImage: `url(${imgBtn})` };
 
 const pathImg = process.env.PUBLIC_URL + "/img/obj/"
+
+
 
 //id, title, description, price, pictureUrl
 export const Item = ({item}) =>
@@ -34,9 +37,11 @@ export const Item = ({item}) =>
                         </div>
                     </div>
                     <div className="bottom-wrap">
-                        <div className="price-wrap">
-                            <button className="btn btnProducto" data-abc="true"> Ver detalle </button>
-                        </div>
+                        <Link to={`/Objetos/${item.id}`}> 
+                            <div className="price-wrap">
+                                <button className="btn btnProducto" data-abc="true"> Ver detalle </button>
+                            </div>
+                        </Link>
                     </div> 
                 </figure>
             </div>

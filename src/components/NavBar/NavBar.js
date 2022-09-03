@@ -9,7 +9,8 @@ import ImageSkins from "../../assets/img/skin.png";
 import './NavBar.css';
 
 import { CartWidget } from '../CartWidget/CartWidget';
-
+import { Link } from 'react-router-dom';
+import {tipoObjetos} from '../../helpers/enumeraciones';
 
 
 
@@ -21,8 +22,8 @@ const styleIconTitle = {fontSize:"35px", color:"#f0aa20"};
 const styleNavBar = {backgroundImage: `url(${imgNav})`, paddingLeft: "15px", minHeight: "10px" };
 
 const opciones = [
-    {desc: 'Premium', img: ImagePremium, lista:[{desc: 'Cuenta premium'}, {desc: 'Pases de batalla'}]},
-     {desc: 'Objetos', img: ImageSword, lista:[{desc: 'Armas'}, {desc: 'Conjuros'}, {desc: 'Escudos'}, {desc: 'Vestimentas'}, {desc: 'Otros'}]},
+    {desc: 'Premium', img: ImagePremium, lista:[{desc: 'Cuenta premium', url: '/Premium/Cuenta'}, {desc: 'Pases de batalla', url: 'Premium/PaseBatalla'}]},
+     {desc: 'Objetos', img: ImageSword, lista:[{desc: 'Armas', url: '/TipoObjeto/' + tipoObjetos.arma}, {desc: 'Conjuros', url: '/TipoObjeto/' + tipoObjetos.conjuros}, {desc: 'Armaduras', url: '/TipoObjeto/' + tipoObjetos.armaduras}, {desc: 'Todos', url: '/TipoObjeto/0'}]},
       {desc: 'Skins', img: ImageSkins, lista:null}
     ];
 const configuracion = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -31,9 +32,12 @@ const NavBar = ({children}) => {
 
     const Logo = () => {
         return(
-            <a className="navbar-brand">
-                <FontAwesomeIcon icon={faDragon} style={styleIconTitle} />
-            </a>
+            <Link to="/">
+                <a className="navbar-brand">
+                    <FontAwesomeIcon icon={faDragon} style={styleIconTitle} />
+                </a>
+            </Link>
+
         )
       };
 
@@ -56,11 +60,10 @@ const NavBar = ({children}) => {
       const NavOpcion = (props) => {
         return(
             <li className="nav-item rotateOrigin">
-                <a className="nav-link text-light font-weight-bold px-3" href="#">
-                <img src={props.img} className='rotateTarget' style={{width:"30px", heigth:"30px"}}/>
-                    {props.desc}
-                    
-                </a>
+                    <a className="nav-link text-light font-weight-bold px-3" href="#">
+                        <img src={props.img} className='rotateTarget' style={{width:"30px", heigth:"30px"}}/>
+                            {props.desc}
+                    </a>
             </li>
         )
       };
@@ -74,9 +77,11 @@ const NavBar = ({children}) => {
                 </a>
             <div className="dropdown-menu" aria-labelledby={"dropdownMenuButton" +props.index}>
                 
-                {props.page.lista.map((page) => 
-                     <a className="dropdown-item" href="#">{page.desc}</a>
-                      )}
+                {props.page.lista.map((page, index) => 
+                    <Link to={page.url} key={index}>
+                        <a className="dropdown-item" href="#">{page.desc}</a>
+                    </Link>
+                )}
             </div>
         
         </li>
@@ -107,7 +112,7 @@ const NavBar = ({children}) => {
     <ul className="navbar-nav">
         <HomeTituloSitio titulo="STORE GAME"/>
 
-    {opciones.map((page, index) => ( page.lista == null ? <NavOpcion desc={page.desc} img={page.img}/> : <NavOpcionDropDown page={page} index={index}/> ))}
+    {opciones.map((page, index) => ( page.lista == null ? <NavOpcion key={index} desc={page.desc} img={page.img}/> : <NavOpcionDropDown key={index} page={page} index={index}/> ))}
     </ul>
         <div className='navbar-nav'>
             <li className='nav-item'>{children}</li>

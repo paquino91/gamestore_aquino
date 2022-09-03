@@ -1,4 +1,5 @@
 
+import {useParams} from "react-router-dom";
 import { SpinnerCircularSplit } from "spinners-react/lib/esm/SpinnerCircularSplit";
 
 import { useState, useEffect } from "react";
@@ -17,16 +18,18 @@ const pathImg = process.env.PUBLIC_URL + "/img/obj/"
 
 export const ItemDetail = () =>
 {
+    const {id} = useParams();
     const [data, setData] = useState({})
     const [loading, setLoading] = useState(true)
     useEffect(()=>
     {
+        setLoading(true);
         getFetch.then(response => 
             {
-                setData(response.find(prod => prod.id == 1))
+                setData(response.find(prod => prod.id == id))
                 setLoading(false);
             })
-    }, [])
+    }, [id])
 
     return (
         <div className="col-md-8">
