@@ -37,6 +37,21 @@ export const ItemCount = ({stock, initial, onAdd}) =>
     }
 
     return (
+        <div className="bottom-wrap">
+        
+        <div className="">
+            <button onClick={decrementar} class="btn btnProducto" data-abc="true" style={styleButton}> - </button>
+            <div className="control-cantidad"><input type="text" className="form-control cantidad" value={cantidad} /></div>
+            <button onClick={incrementar}  href="#" class="btn btnProducto" data-abc="true" style={styleButton} > + </button>
+        </div>
+       <div className="price-wrap">
+           <button className={`btn ${cantidad > 0 ? 'btnProducto' : 'btnProductoDisabled'}`} data-abc="true" onClick={()=>agregarAlCarrito(cantidad)}> Agregar al carrito </button>
+            
+       </div>
+   </div> 
+            )
+
+    /*return (
 <div className="container">
   	
 
@@ -79,5 +94,5 @@ export const ItemCount = ({stock, initial, onAdd}) =>
    </div>
      </div>
        
-    )
+    )*/
 }

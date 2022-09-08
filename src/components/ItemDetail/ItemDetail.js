@@ -7,6 +7,7 @@ import getFetch from "../../helpers/productos";
 import './ItemDetail.css';
 
 import background from "../../assets/img/fondo_objetos.jpg";
+import { ItemCount } from "../ItemCount/ItemCount";
 const styleCard = {backgroundImage: `url(${background})` };
 
 const pathImg = process.env.PUBLIC_URL + "/img/obj/"
@@ -21,6 +22,13 @@ export const ItemDetail = () =>
     const {id} = useParams();
     const [data, setData] = useState({})
     const [loading, setLoading] = useState(true)
+    const [cantidad, setCantidad] = useState(0)
+
+    const CargarDatos = (cantidad) =>
+    {
+        console.log("Productos agregados " + cantidad);
+    }
+
     useEffect(()=>
     {
         setLoading(true);
@@ -60,6 +68,7 @@ export const ItemDetail = () =>
 
 
                     </div>
+                    <ItemCount stock={10} initial={0} onAdd={CargarDatos}/>
                 </figure>
             }
 
