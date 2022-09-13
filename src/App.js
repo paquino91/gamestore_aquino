@@ -9,7 +9,7 @@ import { CartWidget } from './components/CartWidget/CartWidget';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { CartList } from './components/CartList/CartList';
-
+import { CartProvider } from './context/CartContext';
 
 function App() {
   const [cantidadCarrito, setCantidadCarrito] = useState(0);
@@ -20,26 +20,28 @@ const agregarProducto = (cantidad) =>
 }
 
   return (
-    <BrowserRouter>
-      <div className="App">
-        
-          <NavBar> 
-            <CartWidget cantidad={cantidadCarrito} />
-          </NavBar>
-          <br /><br /><br /><br /><br />
+    <CartProvider>
+      <BrowserRouter>
+        <div className="App">
+          
+            <NavBar> 
+              <CartWidget />
+            </NavBar>
+            <br /><br /><br /><br /><br />
 
-          <Routes>
-            <Route path="/" element={<ItemListContainer  greeting="Bienvenido" onAdd={agregarProducto}/>}/>
-            <Route path="/TipoObjeto/:idTipoObjeto" element={<ItemListContainer  greeting="Bienvenido" onAdd={agregarProducto}/>}/>
-            <Route path="/Objetos/:id" element={<ItemDetailContainer/>}/>
-            <Route path="/Objetos/:id" element={<ItemDetailContainer/>}/>
-            <Route path="/Cart/" element={<CartList/>}/>
-          </Routes>
+            <Routes>
+              <Route path="/" element={<ItemListContainer  greeting="Bienvenido" onAdd={agregarProducto}/>}/>
+              <Route path="/TipoObjeto/:idTipoObjeto" element={<ItemListContainer  greeting="Bienvenido" onAdd={agregarProducto}/>}/>
+              <Route path="/Objetos/:id" element={<ItemDetailContainer/>}/>
+              <Route path="/Objetos/:id" element={<ItemDetailContainer/>}/>
+              <Route path="/Cart/" element={<CartList/>}/>
+            </Routes>
 
-          <br /><br /><br /><br />
-        
-      </div>
-    </BrowserRouter>
+            <br /><br /><br /><br />
+          
+        </div>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

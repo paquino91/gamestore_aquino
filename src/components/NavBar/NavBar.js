@@ -51,9 +51,11 @@ const NavBar = ({children}) => {
 
       const HomeTituloSitio = (props) => {
         return(
-            <li className="nav-item" style={{paddingRight: "40px"}}>
-                <a className="nav-link text-light font-weight-bold px-3 titleSite" href="#">{props.titulo}</a>
-            </li>
+            <Link to="/">
+                <li className="nav-item" style={{paddingRight: "40px"}}>
+                    <a className="nav-link text-light font-weight-bold px-3 titleSite" href="#">{props.titulo}</a>
+                </li>
+            </Link>
         )
       };
 

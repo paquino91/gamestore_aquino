@@ -1,10 +1,19 @@
-import React from "react";
+import { useContext, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import { CartContext } from "../../context/CartContext";
 import './CartWidget.css';
 const imgBtn = process.env.PUBLIC_URL + "/img/buttonRed.png";
 
-export const CartWidget = ({cantidad}) => {
+export const CartWidget = () => {
+    const {cantidad} = useContext(CartContext)
+
+        useEffect(()=>
+    {
+        console.log(cantidad);
+    }, [])
+
     return(
+        cantidad > 0 &&
         <div className='ml-1 boderCart'>
             <Link to="/Cart">
                 <div className="cartContainer">

@@ -1,15 +1,17 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import './ItemCount.css';
 //import ObjEspada from '../../assets/img/sword_item1.png'
 
 import background from "../../assets/img/fondo_objetos.jpg";
+import { CartContext } from "../../context/CartContext";
 
 const imgBtn = process.env.PUBLIC_URL + "/img/buttonRed.png";
 const styleCard = {backgroundImage: `url(${background})` };
 const styleButton={backgroundImage: `url(${imgBtn})` };
 
-export const ItemCount = ({stock, initial, onAdd}) =>
+export const ItemCount = ({stock, initial, item}) =>
 {
+    const {addProduct} = useContext(CartContext)
     const [cantidad, setCantidad] = useState(initial);
 
     const incrementar = () =>
@@ -32,7 +34,9 @@ export const ItemCount = ({stock, initial, onAdd}) =>
     {
         if (cantidad > 0 && cantidad <= stock)
         {
-            onAdd(cantidad);
+            const nuevoProducto = {...item, cantidad: cantidad}
+            console.log(nuevoProducto);
+            addProduct(nuevoProducto)
         }
     }
 

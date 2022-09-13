@@ -8,6 +8,7 @@ import './ItemDetail.css';
 
 import background from "../../assets/img/fondo_objetos.jpg";
 import { ItemCount } from "../ItemCount/ItemCount";
+import { ItemMin } from "../ItemMin/ItemMin";
 const styleCard = {backgroundImage: `url(${background})` };
 
 const pathImg = process.env.PUBLIC_URL + "/img/obj/"
@@ -23,11 +24,6 @@ export const ItemDetail = () =>
     const [data, setData] = useState({})
     const [loading, setLoading] = useState(true)
     const [cantidad, setCantidad] = useState(0)
-
-    const CargarDatos = (cantidad) =>
-    {
-        console.log("Productos agregados " + cantidad);
-    }
 
     useEffect(()=>
     {
@@ -45,14 +41,9 @@ export const ItemDetail = () =>
                 loading ? <SpinnerCircularSplit size={50} thickness={100} speed={100} color="#36ad47" secondaryColor="rgba(0, 0, 0, 0.44)" />
                 :
                 <figure className="card card-product-grid card-lg font-objeto background-objeto">
-                    <figcaption className="info-wrap">
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <a href="#" className="font-objeto" data-abc="true">{data.title}</a>
-                                    </div>
-                                </div>
-                    </figcaption>
-                    <a href="#" className="img-wrap" data-abc="true"><img src={pathImg + data.pictureUrl}/></a>
+                    
+                    <ItemMin value={data.title} pictureUrl={data.pictureUrl} />
+
                     <div className="descripcionPrecio">
 
                     <div className="col-md-12">
@@ -68,7 +59,7 @@ export const ItemDetail = () =>
 
 
                     </div>
-                    <ItemCount stock={10} initial={0} onAdd={CargarDatos}/>
+                    <ItemCount stock={10} initial={0} item={data}/>
                 </figure>
             }
 

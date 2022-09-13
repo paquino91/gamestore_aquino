@@ -1,4 +1,4 @@
-.CartList .itemListLoad
+.cartList .itemListLoad
 {
     display: flex;
     align-items: center;
@@ -9,4 +9,32 @@
 
     flex-direction: column;
     font-size: calc(10px + 2vmin);
+}
+
+
+
+.background-objeto-cart-card
+{
+    background: linear-gradient(90deg, rgba(41, 39, 10, 0.1) 0%, rgba(121,57,38,.1) 14%, rgba(70, 53, 48, 0.2) 35%, rgba(121,57,38,.2) 78%, rgba(46, 45, 35, 0.1) 100%);
+}
+
+.containerCart
+{
+    padding-left:  0px;
+}
+
+.containerCart h1{
+    color: white;
+}
+
+.fontCarrito
+{
+    color: white;
+}
+
+.fontCarritoSubtitulo
+{
+    color: white;
+    font-weight: bold;
+    font-size: 45px;
 }
