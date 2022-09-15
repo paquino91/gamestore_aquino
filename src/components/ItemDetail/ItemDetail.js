@@ -1,5 +1,5 @@
 
-import {useParams} from "react-router-dom";
+import {useParams, Link} from "react-router-dom";
 import { SpinnerCircularSplit } from "spinners-react/lib/esm/SpinnerCircularSplit";
 
 import { useState, useEffect } from "react";
@@ -25,6 +25,11 @@ export const ItemDetail = () =>
     const [loading, setLoading] = useState(true)
     const [cantidad, setCantidad] = useState(0)
 
+    const updateCantidadItemDetail = (cantidad) =>
+    {
+        setCantidad(cantidad)
+    }
+    
     useEffect(()=>
     {
         setLoading(true);
@@ -59,7 +64,16 @@ export const ItemDetail = () =>
 
 
                     </div>
-                    <ItemCount stock={10} initial={0} item={data}/>
+                    <ItemCount stock={10} initial={0} item={data} onUpdateCantidadItemDetail={updateCantidadItemDetail}/>
+
+    
+                            <div className="price-wrap finCompra" style={ cantidad > 0 ? {visibility: "visible"} : {visibility: "hidden"} }>
+                                <Link to="/Cart">
+                                    <button className="btn btnFinalizarCompra" data-abc="true"> Terminar Compra</button>
+                                </Link>
+                            </div>
+                    
+                    
                 </figure>
             }
 

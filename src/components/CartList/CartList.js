@@ -52,7 +52,7 @@ export const CartList = ({}) =>
                         {
                             productCartList.length > 0 ?
 
-                            <div className="col-md-8">
+                            <div className="col-md-8 offset-md-2">
                                 <figure className="card card-product-grid card-lg font-objeto background-objeto-cart-card">
                                     <figcaption className="info-wrap">
                                             <div className="row">

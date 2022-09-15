@@ -9,7 +9,7 @@ const imgBtn = process.env.PUBLIC_URL + "/img/buttonRed.png";
 const styleCard = {backgroundImage: `url(${background})` };
 const styleButton={backgroundImage: `url(${imgBtn})` };
 
-export const ItemCount = ({stock, initial, item}) =>
+export const ItemCount = ({stock, initial, item, onUpdateCantidadItemDetail}) =>
 {
     const {addProduct} = useContext(CartContext)
     const [cantidad, setCantidad] = useState(initial);
@@ -35,8 +35,8 @@ export const ItemCount = ({stock, initial, item}) =>
         if (cantidad > 0 && cantidad <= stock)
         {
             const nuevoProducto = {...item, cantidad: cantidad}
-            console.log(nuevoProducto);
             addProduct(nuevoProducto)
+            onUpdateCantidadItemDetail(cantidad);
         }
     }
 
@@ -49,7 +49,7 @@ export const ItemCount = ({stock, initial, item}) =>
             <button onClick={incrementar}  href="#" class="btn btnProducto" data-abc="true" style={styleButton} > + </button>
         </div>
        <div className="price-wrap">
-           <button className={`btn ${cantidad > 0 ? 'btnProducto' : 'btnProductoDisabled'}`} data-abc="true" onClick={()=>agregarAlCarrito(cantidad)}> Agregar al carrito </button>
+           <button className={`btn ${cantidad > 0 ? 'btnProducto' : 'btnProductoDisabled'}`} data-abc="true" onClick={()=>agregarAlCarrito(cantidad) }> Agregar al carrito </button>
             
        </div>
    </div> 

@@ -221,3 +221,22 @@
     border-radius: 8px;
     cursor: default !important;
 }
+
+.btnFinalizarCompra
+{
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 0 5px #210909;
+    font-weight: bold;
+    background-color: #296234;
+    opacity: 0.9;
+    border-radius: 8px;
+
+}
+
+.finCompra
+{
+    padding-bottom: 10px;
+}
+
+
