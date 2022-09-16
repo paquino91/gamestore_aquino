@@ -9,9 +9,9 @@ import './ItemDetail.css';
 import background from "../../assets/img/fondo_objetos.jpg";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { ItemMin } from "../ItemMin/ItemMin";
+import { getProduct } from "../../helpers/productos";
 const styleCard = {backgroundImage: `url(${background})` };
 
-const pathImg = process.env.PUBLIC_URL + "/img/obj/"
 
 
 
@@ -30,14 +30,25 @@ export const ItemDetail = () =>
         setCantidad(cantidad)
     }
     
+
+
     useEffect(()=>
     {
         setLoading(true);
-        getFetch.then(response => 
+        const cargarProducto = async()=>
+        {
+            const producto = await getProduct(id);
+            setData(producto);
+            setLoading(false);
+            console.log(producto);
+        }
+        
+        cargarProducto();
+        /*getFetch.then(response => 
             {
                 setData(response.find(prod => prod.id == id))
                 setLoading(false);
-            })
+            })*/
     }, [id])
 
     return (

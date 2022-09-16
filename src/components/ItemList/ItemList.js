@@ -6,6 +6,7 @@ import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { SpinnerCircularSplit } from "spinners-react/lib/esm/SpinnerCircularSplit";
 import getFetch from "../../helpers/productos";
 import './ItemList.css';
+import { getAllProducts, getProductsByType } from "../../helpers/productos";
 export const ItemList = ({items}) =>
 {
     const {idTipoObjeto} = useParams();
@@ -31,9 +32,20 @@ export const ItemList = ({items}) =>
             try
             {
                 setLoading(true);
-                const listaObjetos = await obtenerObjetos(items);
-                setLoading(false);
-                setObjetos(listaObjetos);
+                if (idTipoObjeto > 0)
+                {
+                    const listaObjetos = await getProductsByType(idTipoObjeto);
+                    console.log(listaObjetos);
+                    setLoading(false);
+                    setObjetos(listaObjetos);
+                }
+                else
+                {
+                    const listaObjetos = await getAllProducts();
+                    setLoading(false);
+                    setObjetos(listaObjetos);
+                }
+
             }
             catch(error)
             {

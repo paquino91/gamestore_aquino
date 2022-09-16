@@ -8,7 +8,7 @@ const imgBtn = process.env.PUBLIC_URL + "/img/buttonRed.png";
 const styleCard = {backgroundImage: `url(${background})` };
 const styleButton={backgroundImage: `url(${imgBtn})` };
 
-const pathImg = process.env.PUBLIC_URL + "/img/obj/"
+
 
 
 
@@ -26,7 +26,7 @@ export const Item = ({item}) =>
                                 </div>
                     </figcaption>
 
-                    <a href="#" className="img-wrap" data-abc="true"><img src={pathImg + item.pictureUrl}/></a>
+                    <a href="#" className="img-wrap" data-abc="true"><img src={item.pictureUrl}/></a>
                     <div className="descripcionPrecio">
 
                         <div className="col-md-12">
