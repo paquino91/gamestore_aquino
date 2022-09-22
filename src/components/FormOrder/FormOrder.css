@@ -1,0 +1,55 @@
+.titleForm {
+    color: #e9d5d7;
+    display: block;
+    text-shadow: 0 0 5px #210909;
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.itemCompra
+{
+    color: #e0d5d6;
+    display: block;
+    text-shadow: 0 0 5px #210909;
+    font-size: 12px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.itemCompraPrecio
+{
+    color: #e7c645;
+
+    text-shadow: 0 0 5px #210909;
+    font-size: 12px;
+    text-align: right;
+    font-weight: bold;
+    padding-right: 15px;
+}
+
+.itemCompraTotal
+{
+    color: #a08720;
+
+    text-shadow: 0 0 5px #210909;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.inputCompra
+{
+    background-color: #2a2121; 
+    color: white !important;
+}
+
+input::placeholder{
+    color: rgb(148, 54, 54) !important;
+
+  }
+
+  input:focus {
+
+    background-color: #2a2121 !important; 
+
+}

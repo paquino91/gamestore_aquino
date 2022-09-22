@@ -1,4 +1,4 @@
-import { collection, getDocs, getDoc, doc, query, where } from 'firebase/firestore'
+import { collection, getDocs, getDoc, doc, query, where, addDoc } from 'firebase/firestore'
 import dataObjetos from '../data/dataObjetos.json'
 import {db} from "../utils/firebase.js"
 
@@ -48,6 +48,14 @@ export const getProduct = async(id) =>
     console.log("prd", id);
     
     return product;
+}
+
+export const setOrder = async(orderUser) =>
+{
+    const queryRef = collection(db, "Orders");
+    let rta = await addDoc(queryRef, orderUser);
+
+    return rta;
 }
 
 export default getFetch;
